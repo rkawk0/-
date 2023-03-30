@@ -7,10 +7,10 @@ int main() {
 	int number; //학번 변수
 
 	cout << "이름: ";
-	cin.getline(name, 12); //cin.get으로 공백 포함한 문자열 입력 받기
+	cin.getline(name, 12); //cin.getline으로 공백 포함한 문자열 입력 받기
 
 	cout << "학번: ";
-	std::cin >> number;
+	cin >> number;
 
 	cout << "반갑습니다. " << name << "님\n" << endl;
 
