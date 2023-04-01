@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+
+	srand((unsigned int)time(NULL)); //시드값 설정
+
+	int num = rand() % 100 + 1; //1~100 범위 랜덤한 숫자 출력
+	cout << "랜덤한 수: " << num << endl;
+
+	int count; //특정 배수 개수 입력 받기
+	cout << "특정 배수 개수: ";
+	cin >> count;
+
+	int rdnum1 = rand() % num + 1; //1~랜덤한 수 범위 내에서 배수 결정
+	cout << "\n1번째 특정 배수: " << rdnum1;
+	cout << "\n<특정 배수만 출력하는 프로그램>\n";
+	for (int i = 1; i <= num; i++) {
+		if (i % rdnum1 == 0) {
+			cout << i << ",";
+		}
+	}
+	cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
+	for (int i = 1; i <= num; i++) {
+		if (i % rdnum1 != 0) {
+			cout << i << ",";
+		}
+	}
+
+	int rdnum2 = rand() % num + 1; //1~랜덤한 수 범위 내에서 배수 결정
+	cout << "\n\n2번째 특정 배수: " << rdnum2;
+	cout << "\n<특정 배수만 출력하는 프로그램>\n";
+	for (int i = 1; i <= num; i++) {
+		if (i % rdnum2 == 0) {
+			cout << i << ",";
+		}
+	}
+	cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
+	for (int i = 1; i <= num; i++) {
+		if (i % rdnum2 != 0) {
+			cout << i << ",";
+		}
+	}
+
+	return 0;
+}
