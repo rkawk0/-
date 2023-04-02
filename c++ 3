@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-	int seat[10][6] = {0};
+	int seat[10][6] = { 0 };
 	int a, width, length, new_length, new_width; //width=가로, length=세로
 
 	while (true) {
@@ -38,7 +38,7 @@ int main() {
 			//if, else문 이용하여 좌석 예약하기, 이미 예약된 자리를 선택했다면 안내문 출력하기
 			while (true) {
 				cout << endl << "몇열, 몇번째 좌석을 예약하시겠습니까? ";
-				cin >> length >> width;
+				cin >> width >> length;
 
 				if (width < 1 || width > 10 || length < 1 || length > 6) {
 					cout << "잘못된 입력입니다. 다시 입력하세요." << endl;
@@ -69,9 +69,9 @@ int main() {
 			cout << endl;
 
 		}
-			
+
 		//2를 입력한 경우
-		if (a == 2) {
+		else if (a == 2) {
 			cout << endl;
 			cout << "1 2 3" << "\t" << "4 5 6" << endl;
 			cout << "-------------" << endl;
@@ -86,21 +86,21 @@ int main() {
 				}
 				cout << endl;
 			}
-		
+
 			//if, else문 이용하여 좌석 변경하기, 이미 예약된 자리를 선택했다면 안내문 출력하기
-			while(true) {
+			while (true) {
 				cout << endl << "현재 좌석과 변경하고자 하는 좌석을 각각 열, 번호 순서대로 입력해 주세요: ";
 				cin >> length >> width >> new_length >> new_width;
 
-				if (seat[width - 1][length - 1] == 0) { //현재 좌석이 예약되지 않은 좌석일 경우
+				if (seat[length - 1][width - 1] == 0) { //현재 좌석이 예약되지 않은 좌석일 경우
 					cout << "좌석을 정확히 입력해주세요." << endl;
 				}
-				else if (seat[new_width-1][new_length-1]==1) { //변경할 좌석이 이미 예약된 좌석인 경우
+				else if (seat[new_length - 1][new_width - 1] == 1) { //변경할 좌석이 이미 예약된 좌석인 경우
 					cout << "이미 예약된 좌석입니다. 다른 좌석을 선택해 주세요" << endl;
 				}
 				else {
-					seat[width - 1][length - 1] = 0;
-					seat[new_width - 1][new_length - 1] = 1;
+					seat[length - 1][width - 1] = 0;
+					seat[new_length - 1][new_width - 1] = 1;
 
 					cout << "좌석이 변경되었습니다." << endl;
 
@@ -126,14 +126,14 @@ int main() {
 		}
 
 		//3을 입력한 경우
-		if (a == 3) {
+		else if (a == 3) {
 			cout << "프로그램을 종료합니다." << endl;
 			break;
 		}
-		
+
 		//1, 2, 3 이외의 수를 입력한 경우
-		else {cout << "올바른 숫자를 입력해 주세요." << endl;}
-		
+		else {cout << "올바른 숫자를 입력해 주세요.\n" << endl;}
+
 	}
 	return 0;
 }
