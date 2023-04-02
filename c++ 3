@@ -48,7 +48,7 @@ int main() {
 				}
 				else {
 					seat[width - 1][length - 1] = 1;
-					cout << "좌석 (" << length << ", " << width << ")이 예약되었습니다." << endl;
+					cout << "예약되었습니다." << endl;
 
 					cout << endl;
 					cout << "1 2 3" << "\t" << "4 5 6" << endl;
@@ -103,7 +103,6 @@ int main() {
 					seat[new_width - 1][new_length - 1] = 1;
 
 					cout << "좌석이 변경되었습니다." << endl;
-					cout << "새로운 좌석 위치: (" << new_length << ", " << new_width << ")" << endl;
 
 					cout << endl;
 					cout << "1 2 3" << "\t" << "4 5 6" << endl;
