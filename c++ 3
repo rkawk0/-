@@ -49,6 +49,20 @@ int main() {
 				else {
 					seat[width - 1][length - 1] = 1;
 					cout << "좌석 (" << length << ", " << width << ")이 예약되었습니다." << endl;
+
+					cout << endl;
+					cout << "1 2 3" << "\t" << "4 5 6" << endl;
+					cout << "-------------" << endl;
+					for (width = 0; width < 10; width++) {
+						for (length = 0; length < 6; length++) {
+							if (length == 3) {
+								cout << "  ";
+							}
+							cout << seat[width][length] << " ";
+						}
+
+						cout << endl;
+					}
 					break;
 				}
 			}
@@ -90,6 +104,21 @@ int main() {
 
 					cout << "좌석이 변경되었습니다." << endl;
 					cout << "새로운 좌석 위치: (" << new_length << ", " << new_width << ")" << endl;
+
+					cout << endl;
+					cout << "1 2 3" << "\t" << "4 5 6" << endl;
+					cout << "-------------" << endl;
+					for (width = 0; width < 10; width++) {
+						for (length = 0; length < 6; length++) {
+							if (length == 3) {
+								cout << "  ";
+							}
+							cout << seat[width][length] << " ";
+						}
+
+						cout << endl;
+					}
+
 					break;
 				}
 			}
