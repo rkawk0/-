@@ -15,32 +15,34 @@ int main() {
 	cout << "특정 배수 개수: ";
 	cin >> count;
 
-	int rdnum1 = rand() % num + 1; //1~랜덤한 수 범위 내에서 배수 결정
-	cout << "\n1번째 특정 배수: " << rdnum1;
+	int tnum1; //첫 번째 배수 입력 받기
+	cout << "\n1번째 특정 배수: ";
+	cin >> tnum1;
 	cout << "\n<특정 배수만 출력하는 프로그램>\n";
 	for (int i = 1; i <= num; i++) {
-		if (i % rdnum1 == 0) {
+		if (i % tnum1 == 0) {
 			cout << i << ",";
 		}
 	}
 	cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
 	for (int i = 1; i <= num; i++) {
-		if (i % rdnum1 != 0) {
+		if (i % tnum1 != 0) {
 			cout << i << ",";
 		}
 	}
 
-	int rdnum2 = rand() % num + 1; //1~랜덤한 수 범위 내에서 배수 결정
-	cout << "\n\n2번째 특정 배수: " << rdnum2;
+	int tnum2; //두 번째 배수 입력 받기
+	cout << "\n\n2번째 특정 배수: ";
+	cin >> tnum2;
 	cout << "\n<특정 배수만 출력하는 프로그램>\n";
 	for (int i = 1; i <= num; i++) {
-		if (i % rdnum2 == 0) {
+		if (i % tnum2 == 0) {
 			cout << i << ",";
 		}
 	}
 	cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
 	for (int i = 1; i <= num; i++) {
-		if (i % rdnum2 != 0) {
+		if (i % tnum2 != 0) {
 			cout << i << ",";
 		}
 	}
