@@ -15,37 +15,26 @@ int main() {
 	cout << "특정 배수 개수: ";
 	cin >> count;
 
-	int tnum1; //첫 번째 배수 입력 받기
-	cout << "\n1번째 특정 배수: ";
-	cin >> tnum1;
-	cout << "\n<특정 배수만 출력하는 프로그램>\n";
-	for (int i = 1; i <= num; i++) {
-		if (i % tnum1 == 0) {
-			cout << i << ",";
+	for (int i = 1; i <= count; i++) {
+
+		int tnum1; //배수 입력 받기
+		cout << "\n특정 배수: ";
+		cin >> tnum1;
+		cout << "\n<특정 배수만 출력하는 프로그램>\n";
+		for (int i = 1; i <= num; i++) {
+			if (i % tnum1 == 0) {
+				cout << i << ",";
+			}
 		}
-	}
-	cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
-	for (int i = 1; i <= num; i++) {
-		if (i % tnum1 != 0) {
-			cout << i << ",";
+		cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
+		for (int i = 1; i <= num; i++) {
+			if (i % tnum1 != 0) {
+				cout << i << ",";
+			}
 		}
+		cout << "\n";
 	}
 
-	int tnum2; //두 번째 배수 입력 받기
-	cout << "\n\n2번째 특정 배수: ";
-	cin >> tnum2;
-	cout << "\n<특정 배수만 출력하는 프로그램>\n";
-	for (int i = 1; i <= num; i++) {
-		if (i % tnum2 == 0) {
-			cout << i << ",";
-		}
-	}
-	cout << "\n<특정 배수 제외 출력하는 프로그램>\n";
-	for (int i = 1; i <= num; i++) {
-		if (i % tnum2 != 0) {
-			cout << i << ",";
-		}
-	}
 
 	return 0;
 }
