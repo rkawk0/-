@@ -43,7 +43,7 @@ bool login(const string& id, const string& pass) {
 
 // 자산 관리 메뉴 출력 함수
 void showAssetMenu(const string& id) {
-    cout << endl << "********** " << id << " 자산 관리 서비스 **********" << endl;
+    cout << endl << "********** swing 자산 관리 서비스 **********" << endl;
     cout << "1. 계좌 정보 출력" << endl;
     cout << "2. 총 자산 출력" << endl;
     cout << "3. 로그아웃" << endl << endl;
@@ -71,7 +71,7 @@ void handleAssetMenu(const string& name, const string& id, myaccount& obj) {
             cout << "------------------------------------------------" << endl;
         }
         else if (choice == "2") {
-            cout << endl << "현재 " << id << " 자산관리 서비스에 등록된 회원님의 총 자산은 " << total(obj) << "원 입니다." << endl;
+            cout << endl << "현재 swing 자산관리 서비스에 등록된 회원님의 총 자산은 " << total(obj) << "원 입니다." << endl;
                 }
                 else if (choice == "3") {
                     cout << endl << "===== 로그아웃 =====" << endl;
