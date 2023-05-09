@@ -12,7 +12,7 @@ struct myaccount {
 
 // 회원가입 함수
 void signup(string& name, string& id, string& pass) {
-    cout << endl << "이름: "; 
+    cout << endl << "이름: ";
     getline(cin, name); //사용자 이름을 입력 받아 name 변수에 저장
     cout << "아이디: ";
     getline(cin, id);   //사용자 id을 입력 받아 id 변수에 저장
@@ -65,23 +65,40 @@ void handleAssetMenu(const string& name, const string& id, myaccount& obj) {
         cin >> choice;
 
         if (choice == "1") {
-            cout << endl << "---------------- " << id << " 계좌 정보 ----------------" << endl;
+            cout << endl << "---------------- swing 계좌 정보 ----------------" << endl;
             cout << "|   " << "예금" << "   |    " << "적금" << "    |  " << "주택청약" << " | " << "주식계좌" << " |" << endl;
             cout << "|   " << obj.deposit << "   |    " << obj.savings << "    |     " << obj.hous << "     |    " << obj.stock << "    |" << endl;
             cout << "------------------------------------------------" << endl;
         }
         else if (choice == "2") {
-            cout << endl << "현재 swing 자산관리 서비스에 등록된 회원님의 총 자산은 " << total(obj) << "원 입니다." << endl;
-                }
-                else if (choice == "3") {
-                    cout << endl << "===== 로그아웃 =====" << endl;
-                    cout << endl << "로그아웃 되었습니다. 안녕히가세요." << endl;
-                    exit(0);
-                }
-            }
+            cout << "\n현재 swing 자산관리 서비스에 등록된 회원님의 총 자산은 " << total(obj) << "원 입니다." << endl;
         }
+        else if (choice == "3") {
+            cout << endl << "===== 로그아웃 =====" << endl;
+            cout << endl << "로그아웃 되었습니다. 안녕히가세요." << endl;
+            exit(0);
+        }
+    }
+}
 
+// 메인 함수
+int main() {
+    string choice;
 
+    while (true) {
+        Menu();
+        cin >> choice;
+
+        if (choice == "1") {
+            signup();
+        }
+        else if (choice == "2") {
+            login();
+        }
+        else {
+            cout << "유효하지 않은 메뉴 선택입니다. 다시 선택해주세요." << endl;
+        }
+    }
 
     return 0;
 }
