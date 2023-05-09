@@ -1,24 +1,22 @@
 #include <iostream>
 #include <string>
-#include <cstdlib>
-
 using namespace std;
 
-// 계좌 정보를 나타내는 구조체 (클래스 개념)
-struct Account {
-    int deposit;            // 예금
-    int savings;            // 적금
-    int hous;    // 주택청약
-    int stock;      // 주식
+//계좌 정보를 나타내는 구조체 (클래스 개념)
+struct myaccount {
+    int deposit;    //예금
+    int savings;    //적금
+    int hous;       //주택청약
+    int stock;      //주식
 };
 
 
-void handleAssetMenu(const string& id, Account& obj);
-int total(const Account& obj);
+void handleAssetMenu(const string& id, myaccount& obj); //계좌 정보 출력, 계좌 관리 메뉴 제공 함수
+int total(const myaccount& obj); // 총 자산 계산하여 반환하는 함수
 
 
 
-// 시작 메뉴 출력
+//시작 메뉴 출력
 void startMenu() {
     cout << "********** swing 은행 **********" << endl;
     cout << "1. 회원가입" << endl;
@@ -26,39 +24,39 @@ void startMenu() {
     cout << "번호를 입력하세요 >> ";
 }
 
-// 자산 관리 메뉴 출력
+//자산 관리 메뉴 출력
 void showAssetMenu() {
-    cout << endl << "************ swing 자산 관리 서비스 ************" << endl << endl;
+    cout << endl << "************ swing 자산 관리 서비스 ************" << endl;
     cout << "1. 계좌 정보 출력" << endl;
     cout << "2. 총 자산 출력" << endl;
     cout << "3. 로그아웃" << endl << endl;
     cout << "번호를 입력하세요 >> ";
 }
 
-// 계좌의 총 자산 계산
-int total(const Account& obj) {
+//계좌의 총 자산 계산, myaccount 구조체의 객체를 매개 변수로 받아 계산
+int total(const myaccount& obj) {
     int total_money = obj.deposit + obj.savings + obj.hous + obj.stock;
     return total_money;
 }
 
-// 자산 관리 메뉴 처리
-void handleAssetMenu(const string& id, Account& obj) {
+//자산 관리 메뉴 처리
+void handleAssetMenu(const string& id, myaccount& obj) {
     string choice;
 
     while (true) {
         showAssetMenu();
-        getline(cin, choice);
+        getline(cin, choice); //사용자에게 번호 입력 받음
 
-        if (choice == "1") {
-            cout << endl << "---------------- swing 계좌 정보 ----------------" << endl;
+        if (choice == "1") { //1번 입력시 계좌 정보 출력
+            cout << endl << "---------------- swing 계좌 정보 ---------------" << endl;
             cout << "|   " << "예금" << "  |    " << "적금" << "   |   " << "주택청약" << "  | " << "주식계좌" << " |" << endl;
             cout << "|   " << obj.deposit << "  |    " << obj.savings << "   |      " << obj.hous << "      |     " << obj.stock << "   |" << endl;
             cout << "------------------------------------------------" << endl;
         }
-        else if (choice == "2") {
+        else if (choice == "2") { //2번 입력시 총자산 출력
             cout << endl << "현재 swing 자산관리 서비스에 등록된 회원님의 총 자산은 " << total(obj) << "원 입니다." << endl;
         }
-        else if (choice == "3") {
+        else if (choice == "3") { //3번 입력시 로그아웃
             cout << endl << "===== 로그아웃 =====" << endl;
             cout << endl << "로그아웃 되었습니다. 안녕히가세요." << endl;
             exit(0);
@@ -74,9 +72,9 @@ int main() {
 
     while (true) {
         startMenu();
-        getline(cin, choice);
+        getline(cin, choice); //사용자에게 번호 입력 받음
 
-        if (choice == "1") {
+        if (choice == "1") { //1번 선택시 회원가입
             cout << endl << "이름: ";
             getline(cin, name);
             cout << "아이디: ";
@@ -86,28 +84,28 @@ int main() {
 
             cout << endl << "===== 회원가입 성공 =====" << endl << endl;
         }
-        else if (choice == "2") {
+        else if (choice == "2") { //2번 선택시 로그인
             cout << endl << "아이디: ";
             getline(cin, log_id);
             cout << "비밀번호: ";
             getline(cin, log_pass);
 
-            // 입력한 아이디와 비밀번호가 저장된 사용자 정보와 일치하는지 확인
+            //입력한 아이디와 비밀번호가 저장된 사용자 정보와 일치하는지 확인
             if (log_id == id && log_pass == pass) {
                 cout << endl << "===== 로그인 성공 =====" << endl;
 
-                // 사용자에게 환영 메시지 출력
-                cout << endl << id << "님 환영합니다." << endl;
-                // 사용자의 계좌 정보 초기화, 계좌 관리 메뉴로 이동
-                Account my_account = { 5000, 4000, 0, 10 };
+                //일치하면 사용자에게 환영 메시지 출력
+                cout << endl << name << "님 환영합니다." << endl;
+                //사용자의 계좌 정보 초기화, 계좌 관리 메뉴로 이동
+                myaccount my_account = { 5000, 4000, 0, 10 };
                 handleAssetMenu(id, my_account);
             }
-            else {
+            else { //일치하지 않으면 아래 내용 출력
                 cout << endl << "아이디 혹은 비밀번호가 틀렸습니다." << endl << endl;
             }
         }
-        else {
-            cout << "유효하지 않은 메뉴 선택입니다. 다시 선택해주세요." << endl;
+        else { //1, 2번 외의 번호 입력시 아래 내용 출력
+            cout << "다시 선택해주세요." << endl;
         }
     }
 
